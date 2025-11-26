@@ -36,3 +36,28 @@ Write Terraform files → Run Terraform commands → Call AWS APIs through Terra
 3. `terraform plan` - Create an execution plan
 4. `terraform apply` - Apply the changes to reach desired state
 5. `terraform destroy` - Destroy the infrastructure when needed
+
+## **Terraform Installation on Ubuntu / WSL**
+
+Here’s how I set up Terraform on my machine:
+
+1. **Install HashiCorp's GPG Key and Add Repository:**
+
+   So, I started by adding the HashiCorp GPG key to my system and adding their repository. These steps are needed to get Terraform installed from a trusted source:
+
+   ```bash
+   # For Ubuntu/Debian
+   wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+   echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+   sudo apt update && sudo apt install terraform
+   ```
+
+2. **Verify Terraform Installation:**
+
+   After the installation, I ran the following command to check if Terraform was installed correctly:
+
+   ```bash
+   terraform -version
+   ```
+
+   It worked! I got the Terraform version back, confirming the installation was successful.
