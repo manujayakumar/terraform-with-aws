@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "example" {
   bucket = "manujayakumar96-first-bucket"
 
   tags = {
-    Name        = "My bucket"
+    Name        = "My bucket 2.0"
     Environment = "Dev"
   }
 }
